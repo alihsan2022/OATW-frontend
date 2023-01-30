@@ -1,5 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
-import userAuth, { userIsVerified } from "../../Redux/userAuth";
+import userAuth, {
+  logout,
+  resetUserBillingDetails,
+  userIsVerified,
+} from "../../Redux/userAuth";
 import AuthContext from "../../Context/AuthContext";
 import { Navigate, useNavigate } from "react-router-dom";
 import {
@@ -19,7 +23,7 @@ import DisabledByDefaultIcon from "@mui/icons-material/DisabledByDefault";
 import OpenInFullIcon from "@mui/icons-material/OpenInFull";
 import "./Profile.css";
 import ProfileBankDetails from "./ProfileMenu/ProfileBankDetails";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import UserSubscriptions from "./ProfileMenu/UserSubscriptions";
 import ProfileMenuDesktop from "../Dashboards/ProfileDashboard/ProfileMenuDesktop";
 import ProfileCard from "../Dashboards/ProfileDashboard/ProfileCards/ProfileCard";
@@ -42,7 +46,7 @@ const Profile = () => {
   const [modalBilling, setModalBilling] = useState(false);
   const [modalSubscriptions, setModalSubscriptions] = useState(false);
   const [modalDetails, setModalDetails] = useState(false);
-
+  const dispatch = useDispatch();
   const { userIsVerified, profileMenu } = useSelector(
     (state) => state.userAuth
   );
@@ -54,6 +58,8 @@ const Profile = () => {
   const handleLogout = async () => {
     await signOut(auth)
       .then(() => {
+        dispatch(logout());
+        dispatch(resetUserBillingDetails);
         console.log("Sign out successful");
       })
       .catch((error) => {
@@ -121,42 +127,6 @@ const Profile = () => {
         {userIsVerified && profileMenu === 3 && <ChatsCard />}
         {userIsVerified && profileMenu === 4 && <UpdatesCard />}
         {userIsVerified && profileMenu === 5 && <InboxCard />}
-
-        {/* <div className="profilePage-header">
-          <h1>Profile Page</h1>
-        </div>
-        <div className="profile-menu">
-          <div className="profile-menus">
-            <div className="profile-menus__header">
-              <h5>Bank Details</h5>
-              <OpenInFullIcon />
-            </div>
-            <div className="profile-menus__modal">
-              <ProfileBankDetails modalDisplay={modalBank} />
-            </div>
-          </div>
-          <div className="profile-menus">
-            <div className="profile-menus__header">
-              <h5>Billing Details</h5>
-              <OpenInFullIcon />
-            </div>
-          </div>
-          <div className="profile-menus">
-            <div className="profile-menus__header">
-              <h5>Personal Details</h5>
-              <OpenInFullIcon />
-            </div>
-          </div>
-          <div className="profile-menus">
-            <div className="profile-menus__header">
-              <h5>Live Subscriptions</h5>
-              <OpenInFullIcon />
-            </div>
-            <div className="profile-menus__modal">
-              <UserSubscriptions />
-            </div>
-          </div>
-        </div> */}
 
         <div className="profile-signout">
           <button onClick={handleLogout}>Sign Out</button>

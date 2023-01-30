@@ -47,6 +47,10 @@ export const userAuthSlice = createSlice({
     setFullName: (state, action) => {
       state.fullName = action.payload;
     },
+    resetUserBillingDetails: (state) => {
+      state.fullName = "";
+      state.billingAddress = {};
+    },
   },
 });
 
@@ -60,6 +64,7 @@ export const {
   resetProfileMenu,
   setBillingAddress,
   setFullName,
+  resetUserBillingDetails,
 } = userAuthSlice.actions;
 
 export default userAuthSlice.reducer;

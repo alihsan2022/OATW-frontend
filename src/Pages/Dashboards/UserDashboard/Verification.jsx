@@ -168,7 +168,7 @@ const Verification = () => {
             </Elements>
           )}
 
-          {loading && (
+          {loading && billingAddress?.line1 && (
             <Elements stripe={stripePromise}>
               <VerificationPaymentCollection />
             </Elements>

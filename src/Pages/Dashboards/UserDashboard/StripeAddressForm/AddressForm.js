@@ -44,14 +44,14 @@ const AddressForm = () => {
         .catch((error) => {
           console.log("Unable to update billing address on Stripe.");
           NotificationManager.error(
-            "Unable to update billing address.",
+            "Error. Please try again.",
             "Billing Details.",
             2000
           );
         });
     } else {
       NotificationManager.error(
-        "Unabel to update billing. Try again",
+        "Error. Please try again.",
         "Billing Details.",
         2000
       );

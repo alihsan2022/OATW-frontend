@@ -20,6 +20,7 @@ import userAuth, {
   setVerification,
   setCustomerId,
   setBillingAddress,
+  setFullName,
 } from "../Redux/userAuth";
 const auth = getAuth();
 const db = getFirestore();
@@ -52,8 +53,6 @@ export const AuthProvider = ({ children }) => {
         };
 
         getBillingDetails();
-
-        console.log("Refreshed");
       } else {
         dispatch(logout());
       }
@@ -83,22 +82,30 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const updateBillingDetailsFirebase = async () => {
-      const data = {
-        billingDetails: billingAddress,
-        fullName: fullName,
-      };
+      if (fullName?.length > 0 && billingAddress) {
+        const data = {
+          billingDetails: billingAddress,
+          fullName: fullName,
+        };
 
-      const docRef = doc(db, "users", user?.uid);
-      const docSnap = await getDoc(docRef);
+        const docRef = doc(db, "users", user?.uid);
+        const docSnap = await getDoc(docRef);
 
-      await updateDoc(docRef, data)
-        .then((docRef) => {
-          console.log("Billing updated on firebase");
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+        await updateDoc(docRef, data)
+          .then((docRef) => {
+            console.log("Billing updated on firebase");
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      } else {
+        const docRef = doc(db, "users", user?.uid);
+        const docSnap = await getDoc(docRef);
+        dispatch(setBillingAddress(docSnap?.data()?.billingDetails));
+        dispatch(setFullName(docSnap?.data()?.fullName));
+      }
     };
+
     updateBillingDetailsFirebase();
   }, [billingAddress, fullName]);
 
