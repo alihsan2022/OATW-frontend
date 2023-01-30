@@ -1,0 +1,248 @@
+.AllUsers {
+    display: flex;
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+    padding: 20px ;
+    justify-content: space-evenly;
+    align-items: center;
+    min-width: 160px;
+    margin: 10px;
+    border-radius: 7px;
+    background-color: white;
+        box-shadow: 0 4px 2px -2px gray;
+
+}
+
+.userInfo span {
+    font-weight: bold;
+    font-size: 10px;
+}
+
+.users {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.userInfo__details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.userInfo__profile {
+    display: flex;
+    flex-direction: column;
+}
+
+.userInfo__profile img {
+    width: 100px;
+}
+
+.userInfo__details div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.userInfo__details svg {
+    width: 20px;
+    color: black;
+    margin-right: 10px;
+}
+
+.userInfo__btns {
+    margin-top: 20px;
+    border: 1px solid black;
+}
+
+.userInfo__btns button{
+    padding: 5px;
+    cursor: pointer;
+    border: none;
+    font-size: 12px;
+}
+
+.userInfo__btns button:hover {
+    background-color: white;
+}
+
+.EditUser {
+    width: 300px;
+    padding: 20px;
+    background-color: white;
+    margin-left: 10px;
+    display: block;
+}
+
+.EditUser__info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    
+}
+
+.EditUser__info div {
+    display: flex;  
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.EditUser__info div input {
+    padding: 2px;
+}
+
+.EditUser__btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.letters__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.letter {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.letters__section {
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.file__container {
+    margin: 20px;
+}
+
+.letter__status {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.letter__info {
+    display: flex;
+    flex-direction: row;
+    font-size: 10px;
+}
+
+.letter__download {
+    display: flex;
+    font-size: 10px;
+    background-color: lightblue;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 3px;
+}
+
+.allOrphans__filter {
+    display: flex;
+}
+
+.allOrphans__list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: 30px;
+}
+
+.allOrphans__orphan {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    background-color: white;
+    border-radius: 6px;
+    align-items: flex-start;
+    min-width: 200px;
+    font-size: 13px;
+    margin: 10px;
+    box-shadow: 0 4px 2px -2px gray;
+}
+
+.allOrphans__orphan-pic {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    height: 100px;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.orphan__button {
+    padding: 5px 10px;
+    margin-top: 10px;
+    border: none;
+    font-weight: 400;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 10px;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    background-color: black;
+    color: white;
+    border: 1px solid white
+}
+
+.orphan__button:hover {
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+}
+
+.orphan__button svg {
+    font-size: 15px;
+}
+
+.orphan__details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
+
+.orphan__details svg {
+    margin-right: 10px;
+}
+
+.allOrphans__orphan-pic {
+
+    width: 100%;
+}
+
+.allOrphans__orphan-img img {
+    width: 100px;
+}
+
+.allOrphans__orphan-pic div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+}
+
+.btn__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+   
+}

@@ -1,0 +1,107 @@
+#payment-form {
+    border: #f6f9fc solid 1px;
+    border-radius: var(--radius);
+    padding: 100px;
+    width: 50%;
+        margin: 20px 0;
+    margin: auto;
+    box-shadow: 0 30px 50px -20px rgb(50 50 93 / 25%),
+        0 30px 60px -30px rgb(0 0 0 / 30%);
+        margin-top: 50px;
+}
+
+#submit {
+    width: 300px;
+    padding: 10px;
+    margin: 20px;
+    cursor: pointer;
+    background-color: #251BF9;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+border: 1px solid white;
+}
+
+#submit:hover {
+    background-color: white;
+    color: #251BF9;
+    border: #251BF9 1px solid;
+}
+
+#payment-form-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+#payment-message {
+    background-color: red;
+    padding: 10px;
+    color: white;
+    font-size: 10px;
+    border-radius:5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.paymentDetails-header {
+    margin: auto;
+    align-items: center;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+.billingDetails {
+    width: 60%;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.billingDetails h1 {
+    font-size: 20px;
+}
+
+.detailsCollected {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: auto;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.detailsCollected-btns {
+    margin-top: 50px;
+}
+
+.detailsCollected-btns button {
+    width: 200px;
+    height: 50px;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.detailsCollected h1 {
+    font-weight: 400;
+}
+
+.payment-form__checks {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

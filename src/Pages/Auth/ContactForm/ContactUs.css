@@ -1,0 +1,219 @@
+.contactUs__btn {
+    background-color: var(--primary-btn-bg);
+}
+
+.contactUs__page-container {
+    width: 75%;
+    margin: auto;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+}
+
+.contactUs__page-header {
+    display: flex;
+    flex-direction: column;
+    flex: 0.4;
+    margin-right: 20px;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.contactUs__page-header h4 {
+    margin-bottom: 20px;
+}
+
+.contactUs__page-form {
+    flex: 0.6;
+    display: flex;
+    background-color: var(--light-gray);
+    padding: 20px;
+    border-radius: 10px;
+    flex-direction: column;
+}
+
+.contactUs__form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.contactUs__form-header_btns {
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    justify-content: space-around;
+    background-color: transparent;
+    border: 1px solid var(--dark-gray);
+    border-radius: 10px;
+    min-width: 200px;
+    max-height: 75px;
+}
+
+.form-header__btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.form-header__btn button {
+    background-color: white;
+    padding:10px 14px;
+    width: 100px;
+    margin: 10px;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid var(--dark-gray);
+    font-weight: 600;
+}
+
+#button__active {
+    background-color: var(--primary-btn-bg);
+    color: white;
+}
+
+.contactUs__form-header {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-header {
+    max-width: 500px;
+    margin-right: 20px;
+}
+
+.form-content {
+    width: 100%;
+}
+
+.form-content__labelSection {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+
+}
+
+.form-content__labelSection label {
+    margin-bottom: 10px;
+}
+
+.form-content__labelSection input {
+    padding: 12px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--dark-gray);
+}
+
+.form-content__description {
+    height: 100px;
+}
+
+.form-content__labelSection textarea {
+    padding: 12px 10px;
+        border-radius: 8px;
+        border: 1px solid var(--dark-gray);
+}
+
+.form-submit {
+    margin-top: 20px;
+    padding: 20px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+}
+
+.contactUs__page-header span {
+    max-width: 400px;
+}
+
+.form-submit button {
+    padding: 10px;
+    width: 60%;
+    background-color: var(--primary-btn-bg);
+    color: white;
+    font-weight: 500;
+    border: none;
+    border-radius: var(--primary-btn-radius);
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.form-header h4 {
+    margin-bottom: 10px;
+}
+
+.form-submit button:hover {
+    background-color: var(--dark-gray);
+    color: var(--primary-btn-bg);
+    border:1px solid var(--primary-btn-bg);
+}
+
+@media screen and (max-width:1182px ) {
+    .contactUs__form-header {
+        flex-direction: column;
+    }
+
+    .form-header {
+        margin-right: 0px;
+        margin-bottom: 20px;
+    }
+
+    .contactUs__form-header_btns {
+        width: 100%;
+    }
+
+    .form-header__btn button {
+        width: 100%;
+    }
+
+    .contactUs__page-container {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 857px) {
+    .contactUs__page-container {
+        flex-direction: column;
+    }
+
+    .contactUs__form-header {
+        align-items: flex-start;
+    }
+
+    .contactUs__page-header {
+        padding: 0px;
+        margin-right: 0px;
+    }
+
+    .contactUs__page-header-top {
+        margin-bottom: 20px;
+    }
+
+    .contactUs__page-header-bottom {
+        margin-bottom: 20px;
+        margin-right: 0px;
+    }
+}
+
+.contactUs__page-header-bottom {
+    background-color: #FFF6E7;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.contactUs__page-email {
+    background-color: var(--primary-btn-bg);
+    color: white;
+    padding: 10px 19px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}

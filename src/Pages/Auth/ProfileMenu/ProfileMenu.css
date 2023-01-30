@@ -1,0 +1,39 @@
+.user-subscriptions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.user-subscription {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.text-active {
+    color: green;
+}
+
+.text-failed {
+    color: red;
+}
+
+.subscription_cancel {
+    color: white;
+    padding: 0px 5px;
+    background-color: lightcoral;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
+
+@media screen and (max-width: 1028px) {
+    .user-subscription {
+        flex-direction: column;
+    }
+}

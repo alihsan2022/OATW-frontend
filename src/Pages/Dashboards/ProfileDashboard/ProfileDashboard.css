@@ -1,0 +1,182 @@
+.ProfileMenuDesktop-menu {
+    background-color: var(--primary-btn-bg);
+    padding: 10px;
+    border-radius: 0px 0px 12px 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+
+.ProfileMenuDesktop-menuItem img {
+    width: 20px;
+    margin-bottom: 10px;
+}
+
+.ProfileMenuDesktop-menuItem:hover {
+    color: black;
+}
+
+.ProfileMenuDesktop-menuItem{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    justify-content: space-between;
+    color: white;
+}
+
+.profile-card {
+    background-color: var(--light-gray);
+    padding: 20px;
+    border-radius: 12px;
+    
+}
+
+.profile-card__body {
+    display: flex;
+    flex-direction: row;
+}
+
+.body-billing {
+    background-color: white;
+    padding: 10px;
+    width: 40%;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.body-personal {
+        background-color: white;
+            padding: 10px;
+            width: 40%;
+            margin-top: 20px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+}
+
+.profile-card__body-profile {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 100px;
+    text-align: center;
+}
+
+.profile-card__body-profile img {
+    width: 100px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+}
+
+.profile-card__body-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.profile-card__buttons {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.profile-card__body-details h5 {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.profile-card__buttons button {
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 7px;
+    border: none;
+    background-color: var(--primary-btn-bg);
+    color: white;
+    cursor: pointer;
+}
+
+.cards-card__body {
+    margin-top: 20px;
+    width: 300px;
+}
+
+@media screen and (max-width: 749px) {
+    .profile-card__body {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-card__body-details {
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .profile-card__body-details {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .body-billing {
+        width: 90%;
+        padding: 10px 10px;
+        text-align: left;
+    }
+    .body-personal {
+        width: 90%;
+        padding: 10px 10px;
+        text-align: left;
+    }
+
+    .profile-card {
+        padding: 10px;
+    }
+
+    .profile-card__buttons button {
+        margin: 5px;
+    }
+
+
+}
+
+
+
+.billing-form__labelSection label {
+    font-size: 10px;
+    font-weight: 400;
+}
+
+.body-billing-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.billing-form-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.billing-form__labelSection {
+    display: flex;
+    flex-direction: column;
+}
+
+.billing-form {
+    margin-top: 10px;
+}
+
+.billing-form input {
+    padding: 8px 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--dark-gray);
+    border-radius: 5px;
+}

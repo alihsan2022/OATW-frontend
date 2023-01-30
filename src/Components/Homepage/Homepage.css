@@ -1,0 +1,439 @@
+.sponsor-stats img {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    border-radius: 50px;
+}
+
+.homepage-main {
+    margin-bottom: -80px;
+    background-image: url('https: //firebasestorage.googleapis.com/v0/b/orphansaroundtheworld-110e1.appspot.com/o/homepage-img.png?alt=media&token=5957ff2e-c9f0-4842-9e61-d1cc97ac1f7a')
+}
+
+.main-img {
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+    top: -100px;
+    z-index: -1000;
+    width: 100%;
+    
+}
+.main-img__icons {
+    position: absolute;
+    z-index: -1000;
+    left: 0px;
+    top: 5px;
+    right: 200px;
+    max-width: 100%;
+    overflow-x: hidden;
+    opacity: 0.5;
+}
+
+.homepage-sponsor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.sponsor-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 60%;
+}
+
+
+.sponsor-header h1 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.sponsor-header span {
+    font-size: 12px;
+    max-width: 400px;
+}
+
+.sponsor-stats {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 60%;
+    margin-bottom: 40px;
+    margin: auto;
+        margin-top: 20px;
+            margin-bottom: 40px;
+}
+
+
+
+.sponsor-stat img {
+    margin-bottom: 20px;
+}
+
+.sponsor-stat h5 {
+    font-weight: 500;
+}
+
+.sponsor-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    
+    text-align: center;
+    width: 220px;
+    min-width: 140px;
+    padding: 20px;
+    text-align: center;
+
+    
+}
+
+.orphanage-update {
+    margin-bottom: 200px;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}
+
+.orphanage-header h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+    
+}
+
+.orphanage-header {
+    margin-bottom: 30px;
+    align-items: center;
+    text-align: center;
+    width: 60%;
+}
+
+.orphanage-header__span {
+    font-size: 14px;
+    max-width: 300px;
+}
+
+.orphanage-update__stats {
+}
+
+.orphanage-update__stats img {
+    max-width: 80%;
+
+}
+
+.orphanage-update__details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+        margin-top: 100px;
+}
+
+.orphange-details__text {
+    text-align: left;
+}
+
+.orphange-details__text h5 {
+    margin-bottom: 10px;
+}
+
+.orphanage-video {
+    margin-right: 50px;
+}
+
+.orphanage-video img {
+    max-width: 100%;
+    width: 1000px;
+    filter: blur(0px) drop-shadow(-30px 20px 4px #01b9f5);
+}
+
+.orphange-details__text h5 {
+    font-weight: 600;
+    font-size: 23px;
+}
+
+.orphan {
+        display: flex;
+            background-color: #f4f7f9;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid lightgray;
+            border-radius: 6px;
+}
+
+.orphan-view {
+    display: flex;
+    background-color: #f4f7f9;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+.orphan-view__img {
+    margin-right: 5px;
+}
+
+.orphan-view__img img{
+    width: 80%;
+}
+
+.orphanHomepage-details {
+    font-size: 10px;
+    max-width: 600px;
+    
+}
+
+.orphan-status {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 15px;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+.orphan-status h5{
+    font-size: 12px;
+    color: #999ca5;
+}
+
+.orphan-status__details {
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 1px 1px;
+        border: 1px solid #c5c0c0;
+        border-radius: 10px;
+        width: 120px;
+        margin-top: 5px;
+}
+
+.status {
+    border-radius: 10px;
+    padding: 1px 5px;
+    cursor: pointer;
+}
+
+.status-active {
+    border-radius: 10px;
+        padding: 2px 5px;
+        background-color: #01b9f5;
+        color: white;
+}
+
+.orphan-scroll {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+}
+
+.sponsorship-info {
+    background-color: #11272e;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.info-header {
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+    
+}
+
+.info-header h1 {
+    background-color: #01b9f5;
+    color: white;
+    margin-bottom: 4px;
+}
+
+.info-header_span {
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+.info-header_span span {
+    color: white;
+    font-size: 15px;
+}
+
+.step {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.step img {
+    max-width: 90%;
+    width: auto;
+}
+
+.step-text {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 50%;
+    margin: auto;
+    min-width: 300px; 
+
+}
+
+.step-text h5 {
+    font-size: 20px;
+}
+
+.step-image__container img {
+}
+
+@media screen and (max-width: 1139px) {
+    .orphanage-update__details {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+    }
+
+    .step {
+        width: 80%;
+                margin-top: 40px;
+    }
+
+    .steps {
+    }
+
+    .orphanHomepage-details {
+        margin: auto;
+    }
+
+    .orphanage-video {
+        margin-right: 0px;
+        margin-top: 40px;
+    }
+
+    .orphanage-details__text-header {
+        max-width: 800px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+
+    .orphanage-video img {
+        filter: blur(0px) drop-shadow(-10px 10px 4px #01b9f5);
+    }
+
+    .orphange-details__text {
+        align-items: center;
+        text-align: center;
+    }
+
+}
+
+@media screen and (max-width: 563px) {
+
+
+
+    .header-logo img {
+        width: 100px;
+    }
+
+    .main-img {
+        height: 300px;
+    }
+
+    .sponsor-stats {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+}
+
+@media screen and (max-width: 743px) {
+    .orphanage-update__stats img {
+        max-width: 100%;
+    }
+
+    .step {
+        width: 90%;
+    }
+
+      
+
+    .orphanage-header {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 465px) {
+    .orphan {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .orphan-status {
+        margin-right: 0px;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 693px) {
+    .step {
+        flex-direction: column;
+    }
+
+    .reverse {
+        flex-direction: column-reverse;
+    }
+}
+
+.orphanView-btns {
+    display: flex;
+    align-items: center;
+}
+
+.orphanView-btns button {
+    border: none;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 5px;
+    margin: 5px;
+}
+
+.orphanView-btns svg {
+    font-size: 13px;
+}

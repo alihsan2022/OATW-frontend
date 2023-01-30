@@ -1,0 +1,334 @@
+.dashboard-main {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.dashboard-content {
+    padding: 20px;
+    width: 100%;
+    background-color: #f5f5f5;
+}
+
+.dash-header {
+    background-color: #171717;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    height: 50px;
+}
+
+.dash-header__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin: auto;
+    padding: 0px 30px;
+}
+
+.dash-header__links ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+
+}
+
+.dash-header__links ul li {
+    width: 100px;
+    text-align: left;
+    list-style: none;
+    outline: none;
+    text-decoration: none;
+    color: white;
+    align-items: center;
+    align-content: center;
+    vertical-align: middle;
+}
+
+.dash-header__links ul li a {
+    outline: none;
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    align-items: center;
+
+}
+
+.dash-header__links {
+    display: flex;
+    flex-direction: row;
+}
+
+.icon {
+    margin-right: 10px;
+    align-items: center;
+    text-align: center;
+}
+
+.orphanage-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+
+}
+
+
+
+.orphanage-name img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.dashboard-left__menu {
+    display: flex;
+    flex-direction: column;
+    background-color: #262626;
+    width: 250px;
+    justify-content: space-between;
+    height: 100%;
+    
+}
+
+.left__menu-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0px 30px;
+    height: 100%;
+    align-items: left;
+    margin-top: 30px;
+}
+
+.left__menu-link {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    color: white;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-bottom: 10px;
+
+}
+
+.left__menu-link:hover {
+    background-color: white;
+    color: black;
+}
+
+.selected {
+    background-color: white;
+        color: black;
+}
+
+.link-icon {
+    margin-right: 10px;
+}
+
+.left__menu-links {
+
+}
+
+.left__menu-logout {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+margin-top: 40px;
+}
+
+.logout__icon {
+    margin-right: 10px;
+}
+
+.left__menu-logout button {
+    padding: 5px 20px;
+    margin-bottom: 100px;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.dropzone {
+    text-align: center;
+    padding: 20px;
+    border: 3px dashed #eeeeee;
+    background-color: #fafafa;
+    color: #bdbdbd;
+
+    margin-bottom: 20px;
+}
+
+.accept {
+    border-color: #107c10 !important;
+}
+
+.reject {
+    border-color: #d83b01 !important;
+}
+
+.files__names {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.files__names ul {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.files__container {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    padding: 10px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.files__container button {
+    padding: 5px 20px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: #262626;
+    color: white;
+}
+
+.file__input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.file__input input {
+    text-align: center;
+    align-items: center;
+}
+
+.file__input button {
+    padding: 10px 20px;
+    background-color: #bdbdbd;
+    border: none;
+    border-radius: 7px;
+    border: black 1px solid ;
+    cursor: pointer;
+}
+
+.thumb__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.thumb__container span {
+    font-weight: bold;
+    font-size: 10px;
+}
+
+.upload__file-btn {
+    padding: 5px 20px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    width: 90px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.upload__file-btn span {
+    font-size: 10px;
+}
+
+.success {
+    background-color: #107c10;
+    opacity: 0.7;
+    color: white;
+    margin: 30px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+}
+
+.success svg {
+    margin-right: 20px;
+}
+
+.orphan__update {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    background-color: #262626;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 8px;
+    text-align: center;
+}
+
+.orphan__update-timer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.orphan__update-timer span {
+    font-size: 12px;
+}
+
+.orphan__update-timer svg {
+    width: 20px;
+}
+
+.orphan__updateContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.update__item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.update__item input {
+    width: 80%;
+    padding: 5px 10px;
+}
+
+.orphan__update-btn {
+    background-color: #262626;
+    padding: 10px;
+    margin-top: 10px;
+}

@@ -1,0 +1,57 @@
+.accountVerification-result {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 50px;
+}
+
+
+
+.result {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.result h1 {
+    font-weight: 400;
+    font-size: 45px;
+
+}
+
+.result h5 {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.result-buttons {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.result-buttons button {
+    width: 200px;
+    padding: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    border: 1px solid white;
+    background-color: #241BF9;
+    color: white;
+    border-radius: 5px;
+}
+
+.result-buttons button:hover {
+    background-color: white;
+    color: #241BF9;
+    border: 1px solid #241BF9;
+}
+

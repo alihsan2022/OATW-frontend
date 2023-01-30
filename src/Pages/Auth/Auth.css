@@ -1,0 +1,194 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 130px;
+}
+
+.form-container form {
+        display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        }
+
+.form-container div {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.form-container h2 {
+    margin-bottom: 35px;
+    font-size: 40px;
+}
+
+.input-container input {
+    width: 300px;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid gray;
+    text-decoration: none;
+    outline: none;
+}
+
+.button-container {
+ margin-bottom: 20px;
+ align-items: center;
+ width: 100%;
+ display: flex;
+ flex-direction:column;
+}
+
+.button-container button {
+    padding: 10px;
+    width: 100%;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background-color: var(--primary-btn-bg);
+    color: white;
+}
+
+.dividers {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+    color: var(--dark-gray);
+}
+
+.dividers span {
+    margin: 0px 10px;
+    font-size: 10px;
+    
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    display: flex;
+    align-items: center;
+        background-color: var(--dark-gray);
+}
+
+.redirect-btn {
+    background-color: var(--dark-gray) !important;
+    color: black !important;
+    margin-top: 10px !important;
+    border: 1px solid transparent !important;
+    
+}
+
+.button-container button:hover {
+    background-color: var(--primary-btn-bg-hover);
+    color: white;
+    border: 1px solid transparent;
+}
+
+.login__error div {
+display: flex;
+flex-direction: row;
+align-items: center;
+}
+
+.login__error  {
+    display: flex;
+    flex-direction: row;
+    background-color: lightcoral;
+    padding: 10px;
+    font-size: 10px;
+    color: white;
+    margin-top: 10px;
+    border-radius: 6px;
+}
+
+.profilePage {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 75%;
+    margin: auto;
+    margin-top: 20px;
+
+}
+
+.profilePage-verificationWarn {
+    background-color: lightcoral;
+    padding: 10px;
+    margin-top: 10px;
+    color: white;
+    font-size: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.verificationWarn-container {
+    display: flex;
+    align-items: center;
+}
+
+.verificationWarn-container svg {
+    margin-right: 20px;
+}
+
+.profilePage-verificationApprove {
+    background-color: #241BF9;
+        padding: 10px;
+        margin-top: 10px;
+        color: white;
+        font-size: 10px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+}
+
+.verificationApprove-container {
+    display: flex;
+        align-items: center;
+}
+
+.verificationApprove-container svg {
+    margin-right: 20px;
+}
+
+.profilePage-verificationStatus {
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+}
+
+.profilePage-header h1 {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.approve-closeContainer {
+    cursor: pointer;
+}
+
+.profile-payment_methods {
+    display: flex;
+    flex-direction: column;
+}
+
+.login__recaptcha {
+    margin: 10px;
+    margin-bottom: 20px;
+}

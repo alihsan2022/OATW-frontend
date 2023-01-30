@@ -1,0 +1,23 @@
+.dividers {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+    color: var(--dark-gray);
+}
+
+.dividers span {
+    margin: 0px 10px;
+    font-size: 10px;
+
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    display: flex;
+    align-items: center;
+    background-color: var(--dark-gray);
+}

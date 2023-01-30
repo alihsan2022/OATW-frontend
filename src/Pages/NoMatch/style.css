@@ -1,0 +1,53 @@
+.errorPage {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: calc(60vh);
+}
+
+.errorPage-inner {
+	width: 75%;
+	margin: auto;
+}
+
+.inner-notFound {
+	background-color: lightcoral;
+	width: 150px;
+	color: white;
+	padding: 10px;
+	border-radius: 12px;
+	text-align: center;
+	font-size: 14px;
+}
+
+.inner-404 {
+	margin: 20px 0px 0px 0px;
+}
+
+.inner-404 h2 {
+	font-weight: 400;
+	font-size: 50px;
+	font-style: italic;
+}
+
+.inner-broken {
+	margin-bottom: 20px;
+	font-size: 20px;
+}
+
+.inner-btn {
+	align-items: center;
+	display: flex;
+}
+
+.inner-btn button {
+	padding: 10px;
+	background-color: #241bf9;
+	color: white;
+	border: none;
+	border-radius: 15px;
+	width: 470px;
+	cursor: pointer;
+}

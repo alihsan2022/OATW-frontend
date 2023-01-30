@@ -1,0 +1,555 @@
+.orphanage__children-header h1{
+    font-size: 20px;
+    font-weight: 500;
+    margin-right: 30px;
+}
+
+.header-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.header-links div {
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+    font-size: 13px;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.header-links svg {
+    width: 15px;
+    margin-right: 10px;
+}
+
+.orphanage__children-header {
+    border-radius: 0px;
+    background-color: white;
+    padding: 5px 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.orphanage__children {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.orphanage__table {
+    width: 100%;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.child-add__btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.child-details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.add-child__orphanage {
+    margin-top: 30px;
+    background-color: white;
+        padding: 5px 20px;
+        border-radius: 10px;
+}
+
+.child__row-delete {
+
+}
+
+.add-child__header {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.add-child__header h4 {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.child__row-delete-container {
+    color: #7F1D1D;
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+        background-color: #F87171;
+            padding: 10px;
+            border: 1px solid red;
+                border-radius: 10px;
+                margin-top: 20px;
+}
+
+.upload-success-container {
+    color: green;
+        font-size: 12px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: lightgreen;
+        padding: 10px;
+        border: 1px solid green;
+        border-radius: 10px;
+        margin-top: 20px;
+}
+
+.upload-fail-container {
+    color: #7F1D1D;
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F87171;
+    padding: 10px;
+    border: 1px solid red;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.form-submit-container {
+    color: #7F1D1D;
+        font-size: 12px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #F87171;
+        padding: 10px;
+        border: 1px solid red;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        margin-top: 10px;
+}
+
+.delete__btn {
+    padding: 5px 5px;
+    background-color: white;
+    color: black;
+    outline: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.css-zylse7-MuiButtonBase-root-MuiIconButton-root {
+    background-color: black !important;
+    color: white !important;
+    margin-right: 10px !important;
+}
+
+.css-zylse7-MuiButtonBase-root-MuiIconButton-root.Mui-disabled {
+    background-color: transparent !important;
+    color: rgba(0, 0, 0, 0.26) !important;
+}
+
+.child__fileUpload {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+.add-child__btn {
+    display: flex;
+
+justify-content: flex-end;    
+
+}
+
+.add-child__innerBtn-filled {
+    display: flex;
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.add-child__innerBtn-empty {
+    display: flex;
+        background-color: black;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 10px;
+        cursor: not-allowed;
+        margin-bottom: 20px;
+        opacity: 0.5;
+}
+
+.add-child__innerBtn:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+.all-orphans__view-header {
+    background-color: white;
+    padding: 10px 20px;
+}
+
+.orphan-search {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+    width: 30%;
+    max-height: 40px;
+    padding: 10px;
+    border: 1px solid #D4D4D4;
+    justify-content: flex-end;
+}
+
+.orphan-search__filter {
+    display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: white;
+        width: 30%;
+        padding: 10px;
+        border: 1px solid #D4D4D4;
+        justify-content: center;
+}
+
+
+.orphan-search input {
+    width: 100%;
+    outline: none;
+    border: none;
+}
+
+.orphan-search__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.orphan-details {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.orphan-details__container {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+
+.orphan-details__img {
+    display: flex;
+    justify-content: center;
+}
+
+.orphan-details__img img{
+    max-width: 100%;
+    max-height: 100px;
+}
+
+.orphan-details__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.orphanList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.orphan-details__info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.orphan-addPhoto {
+    display: flex;
+    background-color: #D97706;
+    color: white;
+}
+
+.orphan-letterUpload {
+    display: flex;
+        background-color: lightblue;
+        color: white;
+}
+
+.orphan-videoUpload {
+    display: flex;
+        background-color: lightgreen;
+        color: white;
+    
+}
+
+.orphan-editInfo {
+    background-color: #F87171;
+}
+
+.orphan-btns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.orphan-btn__inner {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.orphan-btn__inner div {
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin: 5px;
+    min-width: 40%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    color: white;
+    border: 1px solid white;
+}
+
+.orphan-btns svg {
+    width: 15px;
+    margin-right: 2px;
+}
+
+
+
+.fail {
+    margin-top: 20px;
+    background-color: red;
+}
+
+.orphan__timeUpdate {
+    display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        background-color: #262626;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 8px;
+        text-align: center;
+        justify-content: space-around;
+}
+
+.orphan-btn__inner div:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+.timeUpdate__container p {
+font-size: 15px;
+font-weight: BOLD;
+margin: 10px;
+}
+
+.orphan__bulk-update {
+    background-color: white;
+    padding: 0px 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: white;
+        border: black 1px solid;
+        align-items: center;
+        display: flex;
+        font-size: 10px;
+            margin-right: 10px;
+
+}
+
+.orphan__bulk-template:hover{
+    background-color: gray;
+    color: white;
+}
+
+.orphan__bulk-template {
+    background-color: white;
+        padding: 0px 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: white;
+        border: black 1px solid;
+        align-items: center;
+        display: flex;
+        font-size: 10px;
+        margin-right: 10px;
+        cursor: pointer;
+}
+
+
+
+.orphan__bulk-update input {
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;
+    width: 200px;
+
+}
+
+.orphan__bulk-update svg, .orphan__bulk-template svg {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+
+
+.file__view {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid black;
+    width: 100px;
+}
+
+.file__section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    max-height: 500px;
+    overflow-y: scroll;
+}
+
+.file__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 100px;
+}
+
+.file__download {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 13px;
+    cursor: pointer;
+    border: 1px solid white;
+}
+
+.file__download:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+
+.file__download svg {
+    font-size: 20px;
+}
+
+.file__name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.file__name svg {
+    font-size: 60px;
+    color: lightblue;
+    margin-bottom: 10px;
+}
+
+.upload__btn {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+    color: white;
+    width: 30%;
+    margin: auto;
+        margin-top: 50px;
+        border-radius: 4px;
+        padding: 10px 20px;
+        cursor: pointer;
+        border: 1px solid white;
+}
+
+.upload__btn:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+.file__actions {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.file__actions div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete {
+    background-color: red;
+}
+
+.timeUpdate {
+    display: flex;
+    flex-direction: row;
+}
+
+.orphan__bulk-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.orphan__bulk-updateTitle {
+    display: flex;
+    align-items: center;
+}
