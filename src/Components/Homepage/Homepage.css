@@ -63,7 +63,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    width: 60%;
     margin-bottom: 40px;
     margin: auto;
         margin-top: 20px;
@@ -313,6 +312,10 @@
 .step-image__container img {
 }
 
+#sponsor-stat-image3 {
+    transform: rotate(5deg);
+}
+
 @media screen and (max-width: 1139px) {
     .orphanage-update__details {
         flex-direction: column-reverse;
@@ -355,6 +358,16 @@
         text-align: center;
     }
 
+}
+
+@media screen and (max-width: 780px) {
+    .sponsor-stat h5{
+        font-size: 10px;
+    }
+
+    .sponsor-stat {
+        width: 0px;
+    }
 }
 
 @media screen and (max-width: 563px) {

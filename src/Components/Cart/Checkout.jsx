@@ -12,6 +12,9 @@ import InputLabel from "@mui/material/InputLabel";
 import InputAdornment from "@mui/material/InputAdornment";
 import FormControl from "@mui/material/FormControl";
 import CartFloatingIcon from "./CartFloatingIcon";
+import cart, { addDonation, getTotalCost } from "../../Redux/cart";
+import { useDispatch, useSelector } from "react-redux";
+import userAuth from "../../Redux/userAuth";
 
 const Checkout = () => {
   const navigate = useNavigate();
@@ -19,10 +22,14 @@ const Checkout = () => {
   const auth = getAuth();
   const location = useLocation();
   const data = location.state;
-
+  const dispatch = useDispatch();
   const [amount, setAmount] = React.useState(0);
   const [cartTotal, setCartTotal] = useState(0);
 
+  const { totalCartItems } = useSelector((state) => state.cart);
+  const { cartSponsorItems, cartDonation, totalPrice } = useSelector(
+    (state) => state.cart
+  );
   const testData = {
     orphanId: 232332,
     orphanageName: "Turkey",
@@ -32,8 +39,9 @@ const Checkout = () => {
   };
 
   useEffect(() => {
-    console.log(data);
-  }, []);
+    dispatch(getTotalCost());
+    console.log(totalPrice);
+  }, [totalCartItems]);
 
   const cart = [
     {
@@ -46,22 +54,24 @@ const Checkout = () => {
     },
   ];
 
-  useEffect(() => {
-    console.log(cart);
-    let total = 0;
-    cart.map((cartItem, index) => {
-      total += cartItem.price;
-    });
-
-    setCartTotal(total);
-  }, [cart]);
-
   const handleAddDonation = () => {
-    cart.push({
-      price: parseInt(amount),
-      itemId: "donation",
-    });
+    console.log(amount);
+    setAmount(0);
+    dispatch(addDonation(amount));
   };
+
+  useEffect(() => {
+    console.log(cartSponsorItems);
+  }, [cartSponsorItems]);
+
+  useEffect(() => {
+    let total = 0;
+    console.log(cartSponsorItems);
+    cartSponsorItems.map((cart, index) => {
+      total += cart.price;
+    });
+    setCartTotal(total + cartDonation);
+  }, [cartSponsorItems]);
 
   return (
     <>
@@ -77,16 +87,19 @@ const Checkout = () => {
             <div className="header__basket">
               <ShoppingCartIcon />
               <span>
-                Basket - ({cart.length}) {cart.length > 0 ? "Items" : "Item"}
+                Basket - ({totalCartItems}){" "}
+                {totalCartItems > 1 ? "Items" : "Item"}
               </span>
             </div>
           </div>
         </div>
         <div className="checkoutDivider-horizontal"></div>
         <div className="checkoutCart-items">
-          {cart.map((item, index) => (
-            <CartItem item={item} />
-          ))}
+          {cartSponsorItems && cartSponsorItems.length > 0 ? (
+            cartSponsorItems.map((item, index) => <CartItem item={item} />)
+          ) : (
+            <span>No items in your cart.</span>
+          )}
         </div>
         <div className="checkoutDivider-horizontal"></div>
         <div className="basket-details">
@@ -104,7 +117,8 @@ const Checkout = () => {
                 <input
                   onChange={(e) => setAmount(e.target.value)}
                   type="number"
-                  placeholder="0"
+                  placeholder={""}
+                  value={amount}
                 />
               </div>
               <div

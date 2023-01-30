@@ -54,7 +54,7 @@ const HowItWorks = () => {
         </div>
         <div className="step">
           <div className="step-image__container">
-            <img src={signup1} />
+            <img id="sponsor-stat-image3" src={signup1} />
           </div>
           <div className="step-text">
             <h5>3. Secure Orphan Sponsorship</h5>

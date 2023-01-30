@@ -250,10 +250,27 @@
         }
 }
 
+@media screen and (max-width: 637px) {
+
+    .checkout {
+        width: 90%;
+    }
+
+    .checkout-header {
+        flex-direction: column-reverse;
+    }
+
+        .checkout-header__basket {
+            margin-bottom: 20px;
+
+        }
+}
+
 @media screen and (max-width: 482px) {
     .checkout-header {
         flex-direction: column-reverse;
     }
+
 }
 
 .cartFloating-icon {

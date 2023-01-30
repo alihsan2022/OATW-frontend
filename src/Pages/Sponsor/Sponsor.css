@@ -237,7 +237,10 @@
 
 .orphanDetails-header__title h2 {
     color: #313B5B;
-    font-size: 3vw;
+    font-size: 30px;
+}
+
+.orphanDetails-container {
 }
 
 .orphanDetails-details {
@@ -312,8 +315,10 @@
 }
 
 .orphanFilter-view-dropdown {
+    width: 100%;
 display: flex;
 flex-direction: row;
+justify-content: space-between;
 }
 
 .orphanFilter-dropdown {
@@ -338,6 +343,7 @@ flex-direction: row;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-right: 15px;
 }
 
 .available {
@@ -363,7 +369,7 @@ flex-direction: row;
 .orphanDetails-info__container {
     margin-top: 20px;
     margin-right: 20px;
-    padding-right: 140px;
+    padding-right: 10px;
 }
 
 .orphanDetails-info__container h5 {
@@ -639,6 +645,55 @@ flex-direction: row;
             display: none;
         }
 
+@media screen and (max-width: 902px) {
+    .orphanDetails-details {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .orphanDetails-details__img {
+        width: 90%;
+    }
+
+    .orphanDetails-header__checks {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .orphanDetails-header__check {
+        max-width: 100%;
+        margin-right:20px;
+    }
+
+    .orphanDetails-details__info {
+        margin-left: 0px;
+        width: 90%;
+        margin-top: 30px;
+
+    }
+
+    .orphanDetails-info__container {
+        padding-right: 0px;
+        margin-right: 0px;
+    }
+    .orphanDetails-status {
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+    }
+
+    .orphanDetails-status__map {
+        margin-top: 70px;
+    }
+
+    .orphanDetails-status__container {
+        flex-direction: column;
+        width: 90%;
+        margin: auto;
+    }
+}
+
 @media screen and (max-width: 868px) {
     .child-sponsorship__container {
         flex-direction: column;
@@ -731,7 +786,6 @@ flex-direction: row;
     }
 
     .orphanDetails-status {
-        width: 100%;
         margin-top: 20px;
         display: flex;
         justify-content: space-between;
@@ -742,4 +796,27 @@ flex-direction: row;
         font-size: 20px;
         margin-bottom: 20px;
     }
+
+    .orphanDetails-header__check img {
+        width: 20px;
+    }
+
+    .orphanDetails-header__check span {
+        font-size: 7px;
+    }
+
+        .orphanDetails-header__check {
+            margin-right: 10px;
+            justify-content: center;
+            align-items: center;
+            text-align: left;
+        }
+
+        .orphanDetails-status__map {
+            margin-top: 30px;
+        }
+
+        .orphanDetails-status__map img {
+            width: 200px;
+        }
 }

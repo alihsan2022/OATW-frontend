@@ -18,7 +18,16 @@ const Orphan = ({ orphan }) => {
 
   return (
     <>
-      <div className="orphan-container">
+      <div
+        onClick={() =>
+          navigate("/orphan-details", {
+            state: {
+              orphan,
+            },
+          })
+        }
+        className="orphan-container"
+      >
         <div className="orphan-img">
           <img src={childPlaceholder} />
         </div>

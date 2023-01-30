@@ -2,25 +2,30 @@ import React, { useEffect, useState } from "react";
 import { getOrphan } from "../../FirebaseFunctions/OrphanFunctions";
 import placeholder from "../../Assets/child-placeholder.png";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import { useDispatch, useSelector } from "react-redux";
+import cart, { removeFromCart } from "../../Redux/cart";
 
 const CartItem = ({ item }) => {
-  const [orphan, setOrphan] = useState();
   const [loaded, setLoaded] = useState();
 
-  useEffect(() => {
-    getDetails();
-  }, []);
+  const { cartSponsorItems } = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+  // useEffect(() => {
+  //   getDetails();
+  // }, []);
 
-  const getDetails = async () => {
-    console.log(item);
-    let data = await getOrphan(item.orphanId);
-    setOrphan(data);
-    if (data) console.log(data);
+  // const getDetails = async () => {
+  //   console.log(item);
+  //   let data = await getOrphan(item.orphanId);
+  //   setOrphan(data);
+  //   if (data) console.log(data);
+  // };
+
+  const handleRemoveFromCart = () => {
+    dispatch(removeFromCart(item.orphanId));
   };
 
-  useEffect(() => {
-    console.log(orphan);
-  }, [orphan]);
+  useEffect(() => {}, [cartSponsorItems]);
 
   return (
     <div className="checkoutCart-item">
@@ -54,7 +59,10 @@ const CartItem = ({ item }) => {
             <div className="checkoutCard-item">
               <span>Total: ${item.price}</span>
             </div>
-            <div className="checkoutCard-item__delete">
+            <div
+              onClick={handleRemoveFromCart}
+              className="checkoutCard-item__delete"
+            >
               <DeleteForeverIcon />
               <span>Remove Item</span>
             </div>

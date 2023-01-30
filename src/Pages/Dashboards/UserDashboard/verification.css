@@ -287,7 +287,7 @@ display: flex;
 
 }
  
-@media only screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
     #payment-form {
         padding: 0px;
     }
@@ -302,5 +302,11 @@ display: flex;
 
     #card-element {
         width: 300px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .verificationContainer-inner {
+        width: 90%;
     }
 }

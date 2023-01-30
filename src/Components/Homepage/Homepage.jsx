@@ -43,7 +43,10 @@ const Homepage = () => {
               }}
               src={sponsorImg1}
             />
-            <h5>Almost 10,000 children are orphaned every single day</h5>
+            <h5>
+              Almost 10,000 children are orphaned every single day around the
+              world.
+            </h5>
           </div>
           <div className="sponsor-stat">
             <img

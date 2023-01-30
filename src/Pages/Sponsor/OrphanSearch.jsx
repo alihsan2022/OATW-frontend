@@ -51,7 +51,6 @@ const OrphanSearch = () => {
       <div className="orphanSearch-container">
         <div className="orphanSearch-search">
           <div className="orphanFilter-view">
-            <span>View by:</span>
             <div className="orphanFilter-view-dropdown">
               <Dropdown
                 className="orphanFilter-dropdown"

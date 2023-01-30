@@ -123,7 +123,7 @@ const OrphanDetails = () => {
           <div className="orphanDetails-status__container">
             <div className="orphanDetails-status__inner">
               <div className="orphanDetails-status">
-                <span>Sponsorship Status:</span>
+                <span>Status:</span>
                 <div className="orphanDetails-status__btns">
                   <div className={`${data.notSponsored && "available"}`}>
                     Available
