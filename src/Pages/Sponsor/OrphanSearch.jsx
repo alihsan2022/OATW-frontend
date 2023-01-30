@@ -52,11 +52,21 @@ const OrphanSearch = () => {
         <div className="orphanSearch-search">
           <div className="orphanFilter-view">
             <span>View by:</span>
-            <Dropdown options={country} placeholder="Country" />
-            <Dropdown options={gender} placeholder="Gender" />
+            <div className="orphanFilter-view-dropdown">
+              <Dropdown
+                className="orphanFilter-dropdown"
+                options={country}
+                placeholder="Country"
+              />
+              <Dropdown
+                className="orphanFilter-dropdown"
+                options={gender}
+                placeholder="Gender"
+              />
+            </div>
           </div>
           <div className="orphanDetails-status">
-            <span>Sponsorship Status:</span>
+            <span>Status:</span>
             <div className="orphanDetails-status__btns">
               <div>Available</div>
               <div>Sponsored</div>

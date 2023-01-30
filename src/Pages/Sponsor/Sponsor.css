@@ -66,7 +66,10 @@
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
+
 }
+
+
 
 .orphanFilter-view {
     display: flex;
@@ -197,7 +200,9 @@
 .sponsorPage-bottom {
     text-align: center;
     width: auto;
-    margin-top: 20px;
+    max-width: 800px;
+    margin: auto;
+        margin-top: 20px;
 }
 
 .orphanDetails-container {
@@ -292,11 +297,11 @@
     align-items: center;
     border-radius: 10px;
     max-width: 500px;
-    width: 80%;
 }
 
 .orphanDetails-status span {
     font-weight: 500;
+    margin-right: 20px;
 }
 
 
@@ -304,6 +309,15 @@
     display: flex;
     flex-direction: row;
 
+}
+
+.orphanFilter-view-dropdown {
+display: flex;
+flex-direction: row;
+}
+
+.orphanFilter-dropdown {
+    margin-right: 10px;
 }
 
 .orphanDetails-status__btns div {
@@ -597,6 +611,11 @@
     justify-content: center;
 }
 
+.orphanFilter-view span {
+    margin-right: 20px;
+    font-weight: 500;
+}
+
 .cs__orphan-details div span {
     padding: 10px;
 }
@@ -651,10 +670,76 @@
         font-size: 12px;
     }
 
-
+    .orphanSearch-results {
+        width: 100%;
+        padding: 0px;
+    }
 
     .divider-horizontal {
         display: block;
     }
 
+    .orphanSearch-container {
+        width: 95%;
+    }
+
+}
+
+@media screen and (max-width: 896px) {
+    .sponsorPage-header {
+        flex-direction: column;
+    }
+
+    .sponsorPage-container__right {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .sponsorPage-container__left {
+        margin-right: 0px;
+        margin-bottom: 90px;
+    }
+
+    .sponsorPage-container__left span {
+        font-size: 14px;
+    }
+
+    .sponsorPage-container__right h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        line-height: 35px;
+    }
+
+    .sponsorPage-container__bottom {
+        width: 90%;
+        margin: auto;
+        align-items: center;
+        text-align: center;
+    }
+
+    .orphanFilter-view {
+        display: flex;
+        justify-content: space-between;
+        max-width: 500px;
+        width: 100%;
+    }
+
+    .sponsorPage-bottom {
+        width: 90%;
+        margin: auto;
+        margin-top: 50px;
+    }
+
+    .orphanDetails-status {
+        width: 100%;
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
+
+    .sponsorPage-bottom h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
 }

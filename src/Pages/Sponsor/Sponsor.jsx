@@ -58,12 +58,11 @@ const Sponsor = () => {
       <OrphanSearch />
       <div className="sponsorPage-bottom">
         <h2>
-          Your Sponsorship means giving life-saving
-          <br /> healthcare to children who need it most.
+          Your Sponsorship means giving life-saving healthcare to children who
+          need it most.
         </h2>
         <span>
           “Blessed is the wealth of the Muslim, from which he gives to the poor,
-          <br />
           the orphan and the wayfarer.” (Muslim)
         </span>
       </div>
