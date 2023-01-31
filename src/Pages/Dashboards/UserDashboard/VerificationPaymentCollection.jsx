@@ -37,7 +37,7 @@ const VerificationPaymentCollection = () => {
   const [disabled, setDisabled] = useState(true);
   const [isVerified, setIsVerified] = useState(false);
 
-  const { stripeCustomerId } = useSelector((state) => state.userAuth);
+  const { stripeCustomerId, fullName } = useSelector((state) => state.userAuth);
   const dispatch = useDispatch();
 
   const updateUserVerification = async () => {
@@ -50,36 +50,22 @@ const VerificationPaymentCollection = () => {
       console.log(error);
     });
 
+    const sendVerificationEmail = await axios
+      .post("http://localhost:3005/sendAccountVerifiedNotification", {
+        username: fullName,
+        email: user.email,
+      })
+      .then(() => {
+        console.log("Sent account verification.");
+      })
+      .catch((error) => {
+        console.log(error);
+        setIsVerified(false);
+        setError("Unable to send account verification email.");
+      });
+
     dispatch(setVerification());
   };
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-
-  //   if (!stripe || !elements) {
-  //     // Stripe.js has not yet loaded.
-  //     // Make sure to disable form submission until Stripe.js has loaded.
-  //     return;
-  //   }
-
-  //   setIsProcessing(true);
-
-  //   const { error } = await stripe.confirmSetup({
-  //     elements,
-  //     confirmParams: {
-  //       // Make sure to change this to your payment completion page
-  //       return_url: `${window.location.origin}/verificationStatus`,
-  //     },
-  //   });
-
-  //   if (error.type === "card_error" || error.type === "validation_error") {
-  //     setMessage(error.message);
-  //   } else {
-  //     setMessage("An unexpected error occured.");
-  //   }
-
-  //   setIsProcessing(false);
-  // };
 
   const createSubscription = async (e) => {
     e.preventDefault();
@@ -99,7 +85,7 @@ const VerificationPaymentCollection = () => {
       });
 
       const attachPaymentMethod = await axios
-        .post(`https://oatw-server-draz.vercel.app/attachPaymentMethod`, {
+        .post("http://localhost:3005/attachPaymentMethod", {
           customerId: stripeCustomerId,
           paymentMethodId: paymentMethod.paymentMethod.id,
         })
@@ -113,7 +99,7 @@ const VerificationPaymentCollection = () => {
         });
 
       const makeCardDefault = await axios
-        .post("https://oatw-server-draz.vercel.app/makeCardDefault", {
+        .post("http://localhost:3005/makeCardDefault", {
           id: stripeCustomerId,
           paymentMethodId: paymentMethod.paymentMethod.id,
         })

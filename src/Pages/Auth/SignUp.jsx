@@ -104,6 +104,7 @@ const SignUp = () => {
 
           let data = {
             user: user,
+            email: user.email,
           };
           await axios
             .post(

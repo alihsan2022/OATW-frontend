@@ -26,6 +26,10 @@ const Dashboard = () => {
     return <Navigate to="/profile" />;
   }
 
+  if (userRole === 0) {
+    return <Navigate to="/profile" />;
+  }
+
   const handleDashboardViewChange = (num) => {
     setAdminDashboard(num);
     setOrphanDashboard(num);
