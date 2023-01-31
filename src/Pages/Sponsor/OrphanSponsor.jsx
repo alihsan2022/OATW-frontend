@@ -169,7 +169,7 @@ const OrphanSponsor = () => {
             </div>
             <div className="sponsorship-type">
               <h5>Sponsorship type:</h5>
-              <div className="sponsorship-type__checkbox">
+              {/* <div className="sponsorship-type__checkbox">
                 <div>
                   <span>Monthly</span>
                   <Checkbox
@@ -210,7 +210,7 @@ const OrphanSponsor = () => {
                     }}
                   />
                 </div>
-              </div>
+              </div> */}
               <div className="sponsorship-amount">
                 <div className="sponsorship-amount__total">
                   <span>
