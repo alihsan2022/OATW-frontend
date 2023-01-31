@@ -121,6 +121,7 @@ export const AuthProvider = ({ children }) => {
 
           if (docSnap.exists()) {
             setUserRole(docSnap?.data()?.userRole);
+            setOrphanageName(docSnap?.data().orphanageName);
           } else {
             // doc.data() will be undefined in this case
             console.log("No such document!");
