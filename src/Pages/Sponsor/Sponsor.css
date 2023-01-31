@@ -171,7 +171,7 @@
    font-size: 10px;
    background-color: #241BF9;
    color: white;
-   padding: 3px 6px;
+   padding: 5px 8px;
    border-radius: 10px;
    cursor: pointer;
 }
@@ -181,6 +181,35 @@
     margin-right: 5px;
 }
 
+.orphanDetails-status__btn-active {
+    background-color: var(--primary-btn-bg);
+        color:white;
+        border: 1px solid #313B5B;
+        padding: 4px 10px;
+        margin-right: 10px;
+        border-radius: 6px;
+        min-width: 80px;
+        align-items: center;
+        text-align: center;
+}
+
+.orphanFilter-view-dropdown {
+    display: flex;
+    align-items: center;
+}
+
+.orphanDetails-status__btn {
+    background-color: transparent;
+    border: 1px solid #313B5B;
+    padding: 4px 10px;
+    margin-right: 10px;
+    border-radius: 6px;
+    min-width: 80px;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+
+}
 
 
 .sponsor-btn__link {
@@ -188,9 +217,10 @@
     align-items: center;
     display: flex;
     position: relative;
-    top: 44px;
+    top: 60px;
     right: 85px;
     cursor: default;
+    height: 20px;
 }
 
 .orphan-details span {
@@ -325,17 +355,6 @@ justify-content: space-between;
     margin-right: 10px;
 }
 
-.orphanDetails-status__btns div {
-    background-color: transparent;
-    border: 1px solid #313B5B;
-    padding: 4px 10px;
-    margin-right: 10px;
-    border-radius:6px;
-    min-width: 80px;
-    align-items: center;
-    text-align: center;
-
-}
 
 .orphanDetails-status {
     padding: 10px;
@@ -349,6 +368,17 @@ justify-content: space-between;
 .available {
     color: white !important;
     background-color: #313B5B !important;
+    padding: 4px 10px;
+        border-radius: 10px;
+        border:1px solid #313B5B;
+        margin-right: 5px;
+}
+
+.status__btn {
+    padding: 4px 10px;
+    border-radius: 10px;
+    border: 1px solid #313B5B;
+    margin-right: 5px;
 }
 
 .orphanDetails-status__map img {
@@ -610,11 +640,12 @@ justify-content: space-between;
 
 .cs__orphan-details div {
     display: flex;
-    font-size: 12px;
+    font-size: 15px;
     padding: 10px;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 .orphanFilter-view span {
@@ -818,5 +849,32 @@ justify-content: space-between;
 
         .orphanDetails-status__map img {
             width: 200px;
+        }
+}
+
+@media screen and (max-width: 498px) {
+    .orphanDetails-container {
+        width: 90%;
+    }
+
+    .orphanDetails-status__container {
+        width: 100%;
+    }
+
+        .child-sponsorship-page {
+            width: 95%;
+    
+        }
+
+        .cs__right {
+            width: 98%;
+        }
+
+        .sponsorship-amount__total {
+            font-size: 15px;
+        }
+
+        .sponsorship-amount__checkout  span {
+            font-size: 15px;
         }
 }

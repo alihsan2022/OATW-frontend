@@ -32,6 +32,7 @@ import PaymentsCard from "../Dashboards/ProfileDashboard/ProfileCards/PaymentsCa
 import ChatsCard from "../Dashboards/ProfileDashboard/ProfileCards/ChatsCard";
 import UpdatesCard from "../Dashboards/ProfileDashboard/ProfileCards/UpdatesCard";
 import InboxCard from "../Dashboards/ProfileDashboard/ProfileCards/InboxCard";
+import { HandleSignout, handleSignout } from "../../FirebaseFunctions/Logout";
 
 const db = getFirestore();
 
@@ -59,7 +60,7 @@ const Profile = () => {
     await signOut(auth)
       .then(() => {
         dispatch(logout());
-        dispatch(resetUserBillingDetails);
+        dispatch(resetUserBillingDetails());
         console.log("Sign out successful");
       })
       .catch((error) => {

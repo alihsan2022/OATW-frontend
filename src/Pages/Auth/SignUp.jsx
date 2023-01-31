@@ -67,62 +67,70 @@ const SignUp = () => {
   }
 
   const handleSignUp = async (e) => {
-    let stripeId;
+    const token = captchaRef.current.getValue();
+    captchaRef.current.reset();
     e.preventDefault();
-    setError("");
-    if (password === "" || confirmPass === "" || password != confirmPass) {
-      setError("Please enter the same passwords.");
-    } else if (username === "" || username.length < 6) {
-      setError("Please enter a username with a minimum of 6 characters.");
-    } else {
-      setLoading(true);
 
-      try {
-        const userCredential = await createUserWithEmailAndPassword(
-          auth,
-          email,
-          password
-        );
+    if (token) {
+      let stripeId;
+      e.preventDefault();
+      setError("");
+      if (password === "" || confirmPass === "" || password != confirmPass) {
+        setError("Please enter the same passwords.");
+      } else if (username === "" || username.length < 6) {
+        setError("Please enter a username with a minimum of 6 characters.");
+      } else {
+        setLoading(true);
 
-        const user = userCredential.user;
+        try {
+          const userCredential = await createUserWithEmailAndPassword(
+            auth,
+            email,
+            password
+          );
 
-        await setDoc(doc(db, "users", user.uid), {
-          uid: user.uid,
-          email: user.email,
-          userRole: 0,
-          billingDetails: {},
-          userName: username,
-          userVerified: false,
-          stripeCustomerId: "",
-          fullName: "",
-        });
+          const user = userCredential.user;
 
-        let data = {
-          user: user,
-        };
-        await axios
-          .post(
-            "https://oatw-server-draz.vercel.app/sendRegistrationConfirmation",
-            data
-          )
-          .then(function (response) {
-            console.log(response);
-          })
-          .catch(function (error) {
-            console.log(error);
+          await setDoc(doc(db, "users", user.uid), {
+            uid: user.uid,
+            email: user.email,
+            userRole: 0,
+            billingDetails: {},
+            userName: username,
+            userVerified: false,
+            stripeCustomerId: "",
+            fullName: "",
           });
 
-        navigate("/profile");
-      } catch (error) {
-        setError(error.message);
-        console.log(error.message);
-        setEmail("");
-        setPassword("");
-        setConfirmPass("");
-        setUsername("");
-        setError("");
-        setLoading(false);
+          let data = {
+            user: user,
+          };
+          await axios
+            .post(
+              "https://oatw-server-draz.vercel.app/sendRegistrationConfirmation",
+              data
+            )
+            .then(function (response) {
+              console.log(response);
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+          navigate("/profile");
+        } catch (error) {
+          setError(
+            "Please enter a valid email & password with 6 or more characters."
+          );
+          console.log(error.message);
+
+          setLoading(false);
+        }
       }
+    } else {
+      setError("Please complete the captcha.");
+      setLoading(false);
+      e.preventDefault();
     }
   };
 
@@ -133,7 +141,16 @@ const SignUp = () => {
         <VerificationSteps step={1} />
         <div className="form-container">
           <h2>Sign Up</h2>
+
           <form>
+            {error && (
+              <div className="login__error">
+                <div>
+                  <ErrorIcon style={{ marginRight: "5px" }} />
+                  <span>{error}</span>
+                </div>
+              </div>
+            )}
             <div className="input-container">
               <input
                 onChange={(e) => setUsername(e.target.value)}
@@ -204,14 +221,6 @@ const SignUp = () => {
                 Already have an account? Login.
               </button>
             </div>
-            {error && (
-              <div className="login__error">
-                <div>
-                  <ErrorIcon />
-                  <span>{error}</span>
-                </div>
-              </div>
-            )}
           </form>
         </div>
       </div>

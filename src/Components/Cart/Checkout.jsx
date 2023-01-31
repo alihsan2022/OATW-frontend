@@ -43,35 +43,11 @@ const Checkout = () => {
     console.log(totalPrice);
   }, [totalCartItems]);
 
-  const cart = [
-    {
-      orphanId: "TO2iTdC4khZ7QEO",
-      orphanageName: "Turkey",
-      userId: "dsf2313213",
-      price: 100,
-      itemId: "12312sdfsdfsd",
-      subscriptionDuration: "monthly",
-    },
-  ];
-
   const handleAddDonation = () => {
     console.log(amount);
-    setAmount(0);
     dispatch(addDonation(amount));
+    setAmount(0);
   };
-
-  useEffect(() => {
-    console.log(cartSponsorItems);
-  }, [cartSponsorItems]);
-
-  useEffect(() => {
-    let total = 0;
-    console.log(cartSponsorItems);
-    cartSponsorItems.map((cart, index) => {
-      total += cart.price;
-    });
-    setCartTotal(total + cartDonation);
-  }, [cartSponsorItems]);
 
   return (
     <>
@@ -137,7 +113,7 @@ const Checkout = () => {
             <span>Basket Total</span>
             <div className="basket__total-totalPrice">
               <span>Total:</span>
-              <span>${cartTotal}</span>
+              <span>${totalPrice}</span>
             </div>
             <div className="basket__total-pay">
               <span>Checkout</span>

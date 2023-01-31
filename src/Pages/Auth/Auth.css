@@ -113,7 +113,10 @@ align-items: center;
     color: white;
     margin-top: 10px;
     border-radius: 6px;
+    margin-bottom: 20px;
+    width: 100%;
 }
+
 
 .profilePage {
     display: flex;

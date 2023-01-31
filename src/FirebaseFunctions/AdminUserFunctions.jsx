@@ -35,6 +35,17 @@ const handleLogout = async () => {
     });
 };
 
+const updateBillingAddress = async (user, billingAddress) => {
+  console.log(billingAddress);
+};
+
+const getBillingAddress = async (user) => {
+  console.log("Getting billing address");
+  const docRef = doc(db, "users", user?.uid);
+  const docSnap = await getDoc(docRef);
+  console.log(docSnap.data());
+};
+
 const updateVerificatonStatus = async (user) => {
   console.log(user);
   const userRef = collection(db, "users");
@@ -80,4 +91,10 @@ const updateUserRole = async (user, newRole, orphanageName) => {
   });
 };
 
-export { updateUserRole, updateVerificatonStatus, handleLogout };
+export {
+  updateUserRole,
+  updateVerificatonStatus,
+  handleLogout,
+  updateBillingAddress,
+  getBillingAddress,
+};

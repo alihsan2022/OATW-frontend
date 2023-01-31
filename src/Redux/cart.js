@@ -3,27 +3,16 @@ import { createSlice } from "@reduxjs/toolkit";
 export const checkoutCartSlice = createSlice({
   name: "cart",
   initialState: {
-    cartSponsorItems: [
-      {
-        orphanId: "TO2iTdC4khsdZ7QEsdO",
-        orphanageName: "Turkey",
-        userId: "dsf2313213",
-        price: 100,
-        itemId: "12312sdfsdfsd",
-        subscriptionDuration: "monthly",
-      },
-      {
-        orphanId: "TO2iTdC4khZ7QEO",
-        orphanageName: "Turkey",
-        userId: "dsf2313213",
-        price: 123,
-        itemId: "12312sdfsdfsd",
-        subscriptionDuration: "monthly",
-      },
-    ],
-    totalCartItems: 2,
-    cartDonation: 12,
+    cartSponsorItems: [],
+    totalCartItems: 0,
+    cartDonation: 0,
     totalPrice: 0,
+    stripeProductIds: {
+      month: "price_1MQkWQCW3PBYUUmKCTP4qzbg",
+      quarter: "price_1MQkWQCW3PBYUUmKuj1jbZCD",
+      year: "price_1MQkWQCW3PBYUUmKPTVaQeCa",
+      donation: "price_1MSzO1CW3PBYUUmKf4kgupqf",
+    },
   },
   reducers: {
     incrementCart: (state) => {
@@ -34,6 +23,7 @@ export const checkoutCartSlice = createSlice({
     },
     addDonation: (state, action) => {
       state.cartDonation += action.payload;
+      state.totalPrice += action.payload;
     },
     removeFromCart: (state, action) => {
       const removeItem = state.cartSponsorItems.filter(
@@ -53,6 +43,10 @@ export const checkoutCartSlice = createSlice({
       total += state.cartDonation;
       state.totalPrice = total;
     },
+    addItemToCart: (state, action) => {
+      state.cartSponsorItems.push({ ...action.payload });
+      state.totalCartItems += 1;
+    },
   },
 });
 
@@ -62,6 +56,7 @@ export const {
   addDonation,
   removeFromCart,
   getTotalCost,
+  addItemToCart,
 } = checkoutCartSlice.actions;
 
 export default checkoutCartSlice.reducer;

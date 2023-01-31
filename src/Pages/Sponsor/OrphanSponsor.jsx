@@ -18,7 +18,9 @@ import { getAuth } from "firebase/auth";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import CartFloatingIcon from "../../Components/Cart/CartFloatingIcon";
 import userAuth, { userIsVerified } from "../../Redux/userAuth";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import cart, { addItemToCart } from "../../Redux/cart";
+import { NotificationManager } from "react-notifications";
 
 const OrphanSponsor = () => {
   const location = useLocation();
@@ -26,16 +28,15 @@ const OrphanSponsor = () => {
   const navigate = useNavigate();
   const { user, verified, stripeCustomerId } = useContext(AuthContext);
   const auth = getAuth();
-
+  const dispatch = useDispatch();
   const [checked, setChecked] = useState([true, false, false]);
   const [timeframe, setTimeFrame] = useState("Month");
   const [cost, setCost] = useState(100);
 
-  const { userIsVerified } = useSelector((state) => state.userAuth);
-
-  useEffect(() => {
-    console.log(stripeCustomerId);
-  }, [stripeCustomerId]);
+  const { userIsVerified, userData } = useSelector((state) => state.userAuth);
+  const { stripeProductIds, cartSponsorItems } = useSelector(
+    (state) => state.cart
+  );
 
   useEffect(() => {
     console.log(data);
@@ -63,16 +64,52 @@ const OrphanSponsor = () => {
   };
 
   const handleSponsor = () => {
-    console.log(userIsVerified);
     if (user && userIsVerified) {
-      navigate(`/collectDetails`, {
-        state: {
-          orphanData: data,
-          price: cost,
-          sponsorshipDuration: timeframe,
-          stripeCustomerId,
-        },
-      });
+      // navigate(`/collectDetails`, {
+      //   state: {
+      //     orphanData: data,
+      //     price: cost,
+      //     sponsorshipDuration: timeframe,
+      //     stripeCustomerId,
+      //   },
+      // });
+
+      let productId;
+
+      if (timeframe === "Month") {
+        productId = stripeProductIds.month;
+      } else if (timeframe === "Quarter") {
+        productId = stripeProductIds.quarter;
+      } else if (timeframe === "yearly") {
+        productId = stripeProductIds.year;
+      } else {
+        productId = stripeProductIds.donation;
+      }
+
+      const itemData = {
+        orphanId: data.id,
+        orphanageName: data.orphanageName,
+        purchaserId: userData?.uid,
+        subscriptionType: timeframe,
+        price: cost,
+        productId,
+      };
+
+      const itemInCart = cartSponsorItems.find(
+        (item) => item.orphanId === itemData.orphanId
+      );
+
+      if (!itemInCart) {
+        dispatch(addItemToCart(itemData));
+        console.log("Item added to cart.");
+        NotificationManager.success("Item added to cart.", "Cart", 2000);
+      } else {
+        NotificationManager.error(
+          "You have already added this item.",
+          "Cart",
+          2000
+        );
+      }
     } else {
       navigate("/profile");
     }

@@ -55,33 +55,39 @@ const Login = () => {
     const token = captchaRef.current.getValue();
     captchaRef.current.reset();
 
-    if (email.length > 0 && password.length > 0) {
-      try {
-        const res = await signInWithEmailAndPassword(auth, email, password);
-        if (res.error) {
-          setError("Invalid username or password.");
-          setLoading(false);
-        } else {
-          setLoggedIn(true);
-          if (loggedIn) {
+    if (token) {
+      if (email.length > 0 && password.length > 0) {
+        try {
+          const res = await signInWithEmailAndPassword(auth, email, password);
+          if (res.error) {
+            setError("Invalid username or password.");
+            setLoading(false);
+          } else {
+            setLoggedIn(true);
+            if (loggedIn) {
+              navigate("/profile");
+            }
             navigate("/profile");
           }
-          navigate("/profile");
-        }
-      } catch (error) {
-        setLoading(false);
-        setError("Invalid username or password.");
-        setLoggedIn(false);
-        console.log(error.code);
-        if (error.code === "auth/wrong-password") {
+        } catch (error) {
+          setLoading(false);
           setError("Invalid username or password.");
-        } else if (error.code === "auth/too-many-requests") {
-          setError("Please wait before you attempt to login again.");
+          setLoggedIn(false);
+          console.log(error.code);
+          if (error.code === "auth/wrong-password") {
+            setError("Invalid username or password.");
+          } else if (error.code === "auth/too-many-requests") {
+            setError("Please wait before you attempt to login again.");
+          }
         }
+      } else {
+        setError("Please enter valid details.");
+        setLoading(false);
       }
     } else {
-      setError("Please enter valid details.");
       setLoading(false);
+      setError("Please complete the captcha.");
+      setLoggedIn(false);
     }
 
     // if (email.length === 0 || password.length === 0) {
@@ -153,6 +159,14 @@ const Login = () => {
         <h2>Login</h2>
 
         <form>
+          {error && (
+            <div className="login__error">
+              <div>
+                <ErrorIcon style={{ marginRight: "5px" }} />
+                <span>{error}</span>
+              </div>
+            </div>
+          )}
           <div className="input-container">
             <input
               onChange={(e) => setEmail(e.target.value)}
@@ -201,15 +215,6 @@ const Login = () => {
             </button>
           </div>
         </form>
-
-        {error && (
-          <div className="login__error">
-            <div>
-              <ErrorIcon />
-              <span>{error}</span>
-            </div>
-          </div>
-        )}
       </div>
 
       <Footer />
