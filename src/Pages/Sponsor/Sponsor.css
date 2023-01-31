@@ -908,4 +908,9 @@ justify-content: space-between;
             margin: 0;
             margin-top: 20px;
         }
+
+        .sponsorship-type__checkbox div {
+padding: 0px;
+font-size: 13px;
+        }
 }
