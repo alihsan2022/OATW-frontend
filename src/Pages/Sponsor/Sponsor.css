@@ -862,7 +862,7 @@ justify-content: space-between;
     }
 
         .child-sponsorship-page {
-            width: 95%;
+            width: 100%;
     
         }
 
@@ -876,5 +876,36 @@ justify-content: space-between;
 
         .sponsorship-amount__checkout  span {
             font-size: 15px;
+        }
+
+        .sponsorship-amount {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sponsorship-amount__total {
+            width: 100px;
+            height: 20px;
+            align-items: center;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .sponsorship-amount__checkout {
+            width: 100px;
+                height: 20px;
+                align-items: center;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+        }
+
+        .sponsorship-type {
+            box-shadow: none;
+            padding: 0px;
+            margin: 0;
+            margin-top: 20px;
         }
 }
