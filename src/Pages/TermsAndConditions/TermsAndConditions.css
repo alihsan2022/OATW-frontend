@@ -1,0 +1,27 @@
+.conditions-container {
+    width: 75%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.conditions-header {
+    margin-bottom: 30px;
+}
+
+.conditions-body h5 {
+    margin-bottom: 20px;
+}
+
+.conditions-body {
+margin-bottom: 40px;
+}
+
+.conditions-body p {
+    margin-bottom: 20px;
+}
+
+.conditions-body li {
+    list-style: decimal;
+    margin-left: 30px;
+    margin-bottom: 10px;
+}

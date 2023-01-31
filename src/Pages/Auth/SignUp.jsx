@@ -202,13 +202,19 @@ const SignUp = () => {
                       ref={captchaRef}
                     />
                   </div>
+
                   <button onClick={handleSignUp}>Register</button>
+                  <span className="tcs-disclaimer">
+                    By creating an account, you agree to our
+                    <a href="/t&cs"> terms & conditions.</a>
+                  </span>
                 </>
               ) : (
                 <button disabled style={{ cursor: "not-allowed" }}>
                   Creating Account...
                 </button>
               )}
+
               <div className="dividers">
                 <div className="divider"></div>
                 <span>OR</span>

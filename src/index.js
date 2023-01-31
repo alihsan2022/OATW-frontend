@@ -35,6 +35,8 @@ import ScrollToTop from "./Components/ScrollToTop";
 import "react-notifications/lib/notifications.css";
 import { NotificationContainer } from "react-notifications";
 import ContactUs from "./Pages/Auth/ContactForm/ContactUs";
+import PrivacyPolicy from "./Pages/PrivacyPolicy/PrivacyPolicy";
+import TermsAndConditions from "./Pages/TermsAndConditions/TermsAndConditions";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // <React.StrictMode>
@@ -64,6 +66,8 @@ root.render(
           <Route path="/FAQPage" element={<FAQPage />} />
           <Route path="/paymentStatus" element={<PaymentStatus />} />
           <Route path="/contactUs" element={<ContactUs />} />
+          <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
+          <Route path="/t&cs" element={<TermsAndConditions />} />
         </Routes>
       </AuthProvider>
     </BrowserRouter>
