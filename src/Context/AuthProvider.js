@@ -113,6 +113,22 @@ export const AuthProvider = ({ children }) => {
   // }, [billingAddress, fullName]);
 
   useEffect(() => {
+    const checkBillingDetails = async () => {
+      const docRef = doc(db, "users", user?.uid);
+      const docSnap = await getDoc(docRef);
+
+      if (!docSnap?.data()?.billingDetails?.line) {
+        console.log("Billing details not found.");
+      } else {
+        console.log("Found");
+        dispatch(setBillingAddress(docSnap?.data()?.billingDetails));
+        dispatch(setFullName(docSnap?.data()?.fullName));
+      }
+    };
+    checkBillingDetails();
+  }, [billingAddress]);
+
+  useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (auth.currentUser != null) {
         const getRole = async () => {

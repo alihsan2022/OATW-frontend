@@ -1,20 +1,35 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AddressElement } from "@stripe/react-stripe-js";
 import "./AddressForm.css";
 import userAuth, {
   setBillingAddress,
   setFullName,
 } from "../../../../Redux/userAuth";
+import {
+  doc,
+  getDoc,
+  getFirestore,
+  collection,
+  query,
+  where,
+  getDocs,
+  updateDoc,
+} from "firebase/firestore";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { NotificationManager } from "react-notifications";
-
+import AuthContext from "../../../../Context/AuthContext";
+const auth = getAuth();
+const db = getFirestore();
 const AddressForm = () => {
   const { billingAddress, stripeCustomerId, fullName } = useSelector(
     (state) => state.userAuth
   );
   const [address, setAddress] = useState("");
   const [name, setName] = useState("");
+  const { user, verified, updateVerification } = useContext(AuthContext);
 
   const dispatch = useDispatch();
   const saveBillingDetails = async (e) => {
@@ -22,6 +37,10 @@ const AddressForm = () => {
     dispatch(setBillingAddress(address));
     dispatch(setFullName(name));
     console.log(billingAddress);
+    const data = {
+      billingDetails: address,
+      fullName: name,
+    };
 
     if (stripeCustomerId != "" && billingAddress) {
       const response = await axios
@@ -33,13 +52,23 @@ const AddressForm = () => {
             name: name,
           }
         )
-        .then((res) => {
+        .then(async (res) => {
           console.log("Updated billing address on stripe.");
           NotificationManager.success(
             "Your billing details have been updated.",
             "Billing Details.",
             2000
           );
+          const docRef = doc(db, "users", user?.uid);
+          const docSnap = await getDoc(docRef);
+
+          await updateDoc(docRef, data)
+            .then((docRef) => {
+              console.log("Billing updated on firebase");
+            })
+            .catch((error) => {
+              console.log(error);
+            });
         })
         .catch((error) => {
           console.log("Unable to update billing address on Stripe.");
