@@ -13,6 +13,12 @@ export const checkoutCartSlice = createSlice({
       year: "price_1MQkWQCW3PBYUUmKPTVaQeCa",
       donation: "price_1MSzO1CW3PBYUUmKf4kgupqf",
     },
+    donationItems: {
+      purchaserId: "",
+      productId: "",
+      amount: 0,
+      type: "donation",
+    },
   },
   reducers: {
     incrementCart: (state) => {
@@ -47,6 +53,18 @@ export const checkoutCartSlice = createSlice({
       state.cartSponsorItems.push({ ...action.payload });
       state.totalCartItems += 1;
     },
+    addDonationItem: (state, action) => {
+      state.donationItems = action.payload;
+      state.totalCartItems += 1;
+    },
+    updateDonation: (state, action) => {
+      state.donationItems.amount += action.payload;
+      state.totalCartItems += 1;
+    },
+    removeDonation: (state, action) => {
+      state.donationItems.amount = 0;
+      state.totalCartItems -= 1;
+    },
   },
 });
 
@@ -57,6 +75,9 @@ export const {
   removeFromCart,
   getTotalCost,
   addItemToCart,
+  addDonationItem,
+  updateDonation,
+  removeDonation,
 } = checkoutCartSlice.actions;
 
 export default checkoutCartSlice.reducer;

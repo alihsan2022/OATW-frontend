@@ -191,6 +191,31 @@
     margin-top: 10px;
 }
 
+.donationItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+        box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+        margin-bottom: 20px;
+        align-items: center;
+}
+
+.donationItem-button {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.donationItem-button button {
+    margin-left: 20px;
+    padding: 5px 8px;
+    background-color: lightcoral;
+    color: white;
+    border: none;
+   cursor: pointer;
+}
+
 .basket__total-pay {
     display: flex;
     background-color: #241BF9;

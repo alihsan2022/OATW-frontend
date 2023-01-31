@@ -12,9 +12,16 @@ import InputLabel from "@mui/material/InputLabel";
 import InputAdornment from "@mui/material/InputAdornment";
 import FormControl from "@mui/material/FormControl";
 import CartFloatingIcon from "./CartFloatingIcon";
-import cart, { addDonation, getTotalCost } from "../../Redux/cart";
+import cart, {
+  addDonation,
+  addDonationItem,
+  addItemToCart,
+  getTotalCost,
+  updateDonation,
+} from "../../Redux/cart";
 import { useDispatch, useSelector } from "react-redux";
 import userAuth from "../../Redux/userAuth";
+import DonationItem from "./DonationItem";
 
 const Checkout = () => {
   const navigate = useNavigate();
@@ -26,10 +33,14 @@ const Checkout = () => {
   const [amount, setAmount] = React.useState(0);
   const [cartTotal, setCartTotal] = useState(0);
 
-  const { totalCartItems } = useSelector((state) => state.cart);
-  const { cartSponsorItems, cartDonation, totalPrice } = useSelector(
-    (state) => state.cart
-  );
+  const {
+    cartSponsorItems,
+    cartDonation,
+    totalPrice,
+    stripeProductIds,
+    donationItems,
+    totalCartItems,
+  } = useSelector((state) => state.cart);
   const testData = {
     orphanId: 232332,
     orphanageName: "Turkey",
@@ -38,14 +49,25 @@ const Checkout = () => {
     itemId: "12312sdfsdfsd",
   };
 
+  const donationData = {
+    purchaserId: user?.uid,
+    productId: stripeProductIds.donation,
+    amount: amount,
+    type: "donation",
+  };
+
   useEffect(() => {
     dispatch(getTotalCost());
     console.log(totalPrice);
   }, [totalCartItems]);
 
   const handleAddDonation = () => {
-    console.log(amount);
-    dispatch(addDonation(amount));
+    // const findDonation = cartSponsorItems.find(
+    //   (item) => item.type === "donation"
+    // );
+    // console.log(findDonation);
+    // setAmount(0);
+    dispatch(updateDonation(parseInt(amount)));
     setAmount(0);
   };
 
@@ -72,12 +94,32 @@ const Checkout = () => {
         <div className="checkoutDivider-horizontal"></div>
         <div className="checkoutCart-items">
           {cartSponsorItems && cartSponsorItems.length > 0 ? (
-            cartSponsorItems.map((item, index) => <CartItem item={item} />)
+            cartSponsorItems.map((item, index) => (
+              <CartItem key={index} item={item} />
+            ))
           ) : (
             <span>No items in your cart.</span>
           )}
         </div>
         <div className="checkoutDivider-horizontal"></div>
+        {/* {donationItems && donationItems.amount > 0 ? (
+          donationItems.map((item, index) => (
+            <>
+              <DonationItem key={index} item={item} />
+
+              <div className="checkoutDivider-horizontal"></div>
+            </>
+          ))
+        ) : (
+          <span></span>
+        )} */}
+        {donationItems && donationItems.amount > 0 && (
+          <>
+            <DonationItem item={donationItems} />
+            <div className="checkoutDivider-horizontal"></div>
+          </>
+        )}
+
         <div className="basket-details">
           <div className="basket-details__donation">
             <span
@@ -113,9 +155,16 @@ const Checkout = () => {
             <span>Basket Total</span>
             <div className="basket__total-totalPrice">
               <span>Total:</span>
-              <span>${totalPrice}</span>
+              <span>${totalPrice + donationItems.amount}</span>
             </div>
-            <div className="basket__total-pay">
+            <div
+              onClick={() => {
+                navigate(`/collectDetails`, {
+                  state: {},
+                });
+              }}
+              className="basket__total-pay"
+            >
               <span>Checkout</span>
             </div>
           </div>
