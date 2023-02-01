@@ -51,15 +51,17 @@ export const checkoutCartSlice = createSlice({
     },
     addItemToCart: (state, action) => {
       state.cartSponsorItems.push({ ...action.payload });
-      state.totalCartItems += 1;
     },
     addDonationItem: (state, action) => {
       state.donationItems = action.payload;
-      state.totalCartItems += 1;
     },
     updateDonation: (state, action) => {
-      state.donationItems.amount += action.payload;
-      state.totalCartItems += 1;
+      if (state.donationItems.amount === 0) {
+        state.donationItems.amount += action.payload;
+        state.totalCartItems = state.totalCartItems + 1;
+      } else {
+        state.donationItems.amount += action.payload;
+      }
     },
     removeDonation: (state, action) => {
       state.donationItems.amount = 0;

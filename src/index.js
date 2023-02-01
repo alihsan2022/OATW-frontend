@@ -37,6 +37,7 @@ import { NotificationContainer } from "react-notifications";
 import ContactUs from "./Pages/Auth/ContactForm/ContactUs";
 import PrivacyPolicy from "./Pages/PrivacyPolicy/PrivacyPolicy";
 import TermsAndConditions from "./Pages/TermsAndConditions/TermsAndConditions";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // <React.StrictMode>
