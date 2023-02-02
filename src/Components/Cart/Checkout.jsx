@@ -18,6 +18,7 @@ import cart, {
   addItemToCart,
   getTotalCost,
   updateDonation,
+  updateDonationIds,
 } from "../../Redux/cart";
 import { useDispatch, useSelector } from "react-redux";
 import userAuth from "../../Redux/userAuth";
@@ -41,13 +42,6 @@ const Checkout = () => {
     donationItems,
     totalCartItems,
   } = useSelector((state) => state.cart);
-  const testData = {
-    orphanId: 232332,
-    orphanageName: "Turkey",
-    userId: "dsf2313213",
-    price: 1220,
-    itemId: "12312sdfsdfsd",
-  };
 
   const donationData = {
     purchaserId: user?.uid,
@@ -56,18 +50,19 @@ const Checkout = () => {
     type: "donation",
   };
 
+  const donationIds = {
+    purchaserId: user?.uid,
+    productId: stripeProductIds.donation,
+  };
+
   useEffect(() => {
     dispatch(getTotalCost());
     console.log(totalPrice);
   }, [totalCartItems]);
 
   const handleAddDonation = () => {
-    // const findDonation = cartSponsorItems.find(
-    //   (item) => item.type === "donation"
-    // );
-    // console.log(findDonation);
-    // setAmount(0);
     dispatch(updateDonation(parseInt(amount)));
+    dispatch(updateDonationIds(donationIds));
     setAmount(0);
   };
 

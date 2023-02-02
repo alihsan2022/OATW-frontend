@@ -176,7 +176,7 @@ const OrphanDetails = () => {
         </div>
         {data.notSponsored && (
           <div className="sponsorNow-btn">
-            <Link to="/orphan-sponsor" state={data}>
+            <Link className="sponsorNow-link" to="/orphan-sponsor" state={data}>
               <span className="sponsorNow-span">Sponsor Now</span>
             </Link>
           </div>

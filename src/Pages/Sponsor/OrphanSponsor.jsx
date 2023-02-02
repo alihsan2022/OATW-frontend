@@ -19,7 +19,7 @@ import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import CartFloatingIcon from "../../Components/Cart/CartFloatingIcon";
 import userAuth, { userIsVerified } from "../../Redux/userAuth";
 import { useDispatch, useSelector } from "react-redux";
-import cart, { addItemToCart } from "../../Redux/cart";
+import cart, { addItemToCart, incrementCart } from "../../Redux/cart";
 import { NotificationManager } from "react-notifications";
 
 const OrphanSponsor = () => {
@@ -93,7 +93,12 @@ const OrphanSponsor = () => {
         subscriptionType: timeframe,
         price: cost,
         productId,
+        firstName: data.firstName,
+        lastName: data.lastName,
+        profilePic: data.profilePic,
       };
+
+      console.log(data);
 
       const itemInCart = cartSponsorItems.find(
         (item) => item.orphanId === itemData.orphanId
@@ -101,6 +106,7 @@ const OrphanSponsor = () => {
 
       if (!itemInCart) {
         dispatch(addItemToCart(itemData));
+        dispatch(incrementCart());
         console.log("Item added to cart.");
         NotificationManager.success("Item added to cart.", "Cart", 2000);
       } else {

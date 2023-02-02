@@ -10,16 +10,8 @@ const CartItem = ({ item }) => {
 
   const { cartSponsorItems } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-  // useEffect(() => {
-  //   getDetails();
-  // }, []);
 
-  // const getDetails = async () => {
-  //   console.log(item);
-  //   let data = await getOrphan(item.orphanId);
-  //   setOrphan(data);
-  //   if (data) console.log(data);
-  // };
+  console.log(item);
 
   const handleRemoveFromCart = () => {
     dispatch(removeFromCart(item.orphanId));
@@ -30,7 +22,9 @@ const CartItem = ({ item }) => {
   return (
     <div className="checkoutCart-item">
       <div className="checkoutCard-item__header">
-        <h5>Orphan Name | Turkey</h5>
+        <h5>
+          {item.firstName} {item.lastName} | {item.orphanageName}
+        </h5>
       </div>
       <div className="checkoutCard-item__details">
         <div className="checkoutCard-item__img">
@@ -47,12 +41,18 @@ const CartItem = ({ item }) => {
               <br />
             </span>
             <span>
-              Give {item.subscriptionDuration} to help this orphan and the
-              family for the whole year!
+              Give every {item.subscriptionType.toLowerCase()} to help this
+              orphan and their family for the whole{" "}
+              {item.subscriptionType.toLowerCase()}!
               <br />
               <br />
             </span>
-            <span>Subscription: {item.subscriptionDuration}</span>
+            <span>
+              Recurring per:{" "}
+              <span style={{ fontWeight: "bold" }}>
+                {item.subscriptionType}
+              </span>
+            </span>
           </div>
 
           <div className="checkoutCard-item__buttons">

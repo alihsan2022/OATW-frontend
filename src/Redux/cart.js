@@ -67,6 +67,10 @@ export const checkoutCartSlice = createSlice({
       state.donationItems.amount = 0;
       state.totalCartItems -= 1;
     },
+    updateDonationIds: (state, action) => {
+      state.donationItems.productId = action.payload.productId;
+      state.donationItems.purchaserId = action.payload.purchaserId;
+    },
   },
 });
 
@@ -80,6 +84,7 @@ export const {
   addDonationItem,
   updateDonation,
   removeDonation,
+  updateDonationIds,
 } = checkoutCartSlice.actions;
 
 export default checkoutCartSlice.reducer;

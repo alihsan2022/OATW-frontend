@@ -412,7 +412,7 @@ justify-content: space-between;
 
 .sponsorNow-btn {
     background-color: gray;
-    width: 40%;
+   width: 200px;
     margin: auto;
     align-items: center;
     text-align: center;
@@ -428,6 +428,7 @@ justify-content: space-between;
 
 .sponsorNow-btn a {
     text-decoration: none;
+    width: 200px;
 }
 
 .sponsorNow-span {
@@ -680,6 +681,10 @@ justify-content: space-between;
 
 .sponsorship-disclaimer {
     padding: 10px;
+}
+
+.sponsorNow-link {
+    width: 50px;
 }
 
         .divider-horizontal {

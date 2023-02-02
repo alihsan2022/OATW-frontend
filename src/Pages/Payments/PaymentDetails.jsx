@@ -15,13 +15,25 @@ const PaymentDetails = () => {
   const [load, setLoad] = useState("");
   const { userIsVerified } = useSelector((state) => state.userAuth);
   const { user, verified } = useContext(AuthContext);
+  const { cartSponsorItems, donationItems } = useSelector(
+    (state) => state.cart
+  );
 
-  const location = useLocation();
-  const data = location.state;
+  let data = {
+    cartSponsorItems,
+    donationItems,
+  };
+
+  // const location = useLocation();
+  // const data = location.state;
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!data) navigate("/sponsor");
+    console.log(data);
+  }, [data]);
+
+  useEffect(() => {
+    // if (!data) navigate("/sponsor");
     if (!userIsVerified) navigate("/profile");
   }, []);
 
